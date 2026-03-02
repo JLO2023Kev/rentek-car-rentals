@@ -5,68 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rentek Car Rentals</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav {
-            margin: 20px 0;
-        }
-        nav a {
-            margin: 0 15px;
-            color: #fff;
-            text-decoration: none;
-        }
-        .container {
-            padding: 20px;
-        }
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            padding: 10px;
-            background: #333;
-            color: #fff;
+        body { background-color: #f5f5dc; font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        .hero { background-color: black; color: white; padding: 50px; text-align: center; }
+        .about, .services, .fleet, .timeline, .footer { padding: 40px; text-align: center; }
+        .services-grid { display: flex; justify-content: space-around; flex-wrap: wrap; }
+        .service { background: white; border: 1px solid #c8392b; margin: 10px; padding: 20px; width: 30%; }
+        h1 { color: #c8392b; }
+        .footer { background-color: gold; padding: 20px; }
+        @media (max-width: 768px) {
+            .services-grid { flex-direction: column; }
+            .service { width: 100%; }
         }
     </style>
-</head>
-<body>
-    <header>
-        <h1>Welcome to Rentek Car Rentals</h1>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">About Us</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
-    <div class="container">
-        <h2>Find Your Perfect Rental Car</h2>
-        <p>We offer a wide variety of vehicles to suit your needs.</p>
-        <form id="rentalForm">
-            <label for="pickupDate">Pickup Date:</label>
-            <input type="date" id="pickupDate" required>
-            <label for="returnDate">Return Date:</label>
-            <input type="date" id="returnDate" required>
-            <button type="submit">Check Availability</button>
-        </form>
-    </div>
-    <footer>
-        <p>&copy; 2026 Rentek Car Rentals</p>
-    </footer>
     <script>
-        document.getElementById('rentalForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const pickup = document.getElementById('pickupDate').value;
-            const returnDate = document.getElementById('returnDate').value;
-            alert(`Rental from ${pickup} to ${returnDate}.`);
+        document.addEventListener('DOMContentLoaded', function() {
+            const smoothScroll = (target) => {
+                document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+            };
+
+            document.querySelector('#whatsapp-button').addEventListener('click', function() {
+                smoothScroll('#contact');
+            });
         });
     </script>
+</head>
+<body>
+    <div class="hero">
+        <h1>Welcome to Rentek Car Rentals</h1>
+        <p>Your adventure starts here. Rent your dream car today!</p>
+        <button id="whatsapp-button">Chat with us on WhatsApp</button>
+    </div>
+
+    <div class="about">
+        <h2>About Us</h2>
+        <p>At Rentek, we offer top-notch car rental services to ensure your travels are seamless and enjoyable.</p>
+    </div>
+
+    <div class="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service"><h3>Luxury Cars</h3><p>Experience high-end luxury on the road.</p></div>
+            <div class="service"><h3>Family Cars</h3><p>Comfort and space for the whole family.</p></div>
+            <div class="service"><h3>Economy Cars</h3><p>Affordable and reliable vehicles for your journey.</p></div>
+        </div>
+    </div>
+
+    <div class="fleet">
+        <h2>Our Fleet</h2>
+        <p>Explore our extensive collection of premium vehicles.</p>
+    </div>
+
+    <div class="timeline">
+        <h2>How It Works</h2>
+        <ol>
+            <li>Select your car.</li>
+            <li>Choose your rental period.</li>
+            <li>Complete the booking process.</li>
+        </ol>
+    </div>
+
+    <div class="footer">
+        <p>Contact us for more information.</p>
+    </div>
 </body>
 </html>
