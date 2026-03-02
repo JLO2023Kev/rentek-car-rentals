@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rentek Car Rentals</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #fff;
+            text-decoration: none;
+        }
+        .container {
+            padding: 20px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Rentek Car Rentals</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>Find Your Perfect Rental Car</h2>
+        <p>We offer a wide variety of vehicles to suit your needs.</p>
+        <form id="rentalForm">
+            <label for="pickupDate">Pickup Date:</label>
+            <input type="date" id="pickupDate" required>
+            <label for="returnDate">Return Date:</label>
+            <input type="date" id="returnDate" required>
+            <button type="submit">Check Availability</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2026 Rentek Car Rentals</p>
+    </footer>
+    <script>
+        document.getElementById('rentalForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const pickup = document.getElementById('pickupDate').value;
+            const returnDate = document.getElementById('returnDate').value;
+            alert(`Rental from ${pickup} to ${returnDate}.`);
+        });
+    </script>
+</body>
+</html>
